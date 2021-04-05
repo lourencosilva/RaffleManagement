@@ -57,3 +57,4 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "dotenv-rails", groups: [:development, :test]
 gem "simple_form"
 gem "font-awesome-sass", "~> 5.15.1"
+gem "devise"
