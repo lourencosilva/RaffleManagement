@@ -1,62 +1,12 @@
-<%= form_with(model: raffle) do |form| %>
-  <% if raffle.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(raffle.errors.count, "error") %> prohibited this raffle from being saved:</h2>
-
-      <ul>
-        <% raffle.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :probable_draw_at %>
-    <%= form.datetime_select :probable_draw_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_sale_at %>
-    <%= form.datetime_select :start_sale_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :finishes_sale_at %>
-    <%= form.datetime_select :finishes_sale_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :drawn_at %>
-    <%= form.datetime_select :drawn_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ticket_value %>
-    <%= form.text_field :ticket_value %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :kind_id %>
-    <%= form.text_field :kind_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= simple_form_for raffle do |f| %>
+  <%= f.input :title%>
+  <%= f.input :description%>
+  <%= f.input :ticket_value%>
+  <%= f.input :probable_draw_at, as: :date, html5: true %>
+  <%= f.input :start_sale_at, as: :date, html5: true %>
+  <%= f.input :finishes_sale_at, as: :date, html5: true %>
+  <%= f.input :drawn_at, as: :date, html5: true %>
+  <%= f.association :user %>
+  <%= f.association :kind %>
+  <%= f.button :submit, class: 'btn-primary'%>
 <% end %>
