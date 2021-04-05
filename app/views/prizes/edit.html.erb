@@ -1,0 +1,19 @@
+<% content_for :title do %>
+  Editando Prize
+<% end %>
+
+<div class="page-header">
+  <h1>Editando Prize</h1>
+  <div>
+    <%= link_to @prize, class: 'btn btn-info' do %>
+      <%= icon 'fas', 'eye' %>
+      Ver
+    <% end %>
+    <%= link_to prizes_path, class: 'btn btn-outline-secondary' do %>
+      <%= icon 'fas', 'bars' %>
+      Voltar
+    <% end %>
+  </div>
+</div>
+
+<%= render 'form' %>

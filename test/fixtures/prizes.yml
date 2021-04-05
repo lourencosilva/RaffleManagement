@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  placing: 1
+  raffle: one
+  ticket: one
+
+two:
+  description: MyString
+  placing: 1
+  raffle: two
+  ticket: two
