@@ -1,7 +1,7 @@
 <%= simple_form_for user do |f| %>
   <%= f.input :name%>
   <%= f.input :email%>
-  <%= f.input :password%>
+  <%= f.input :password , input_html: { maxlength: 20 }%>
   <%= f.text_area :picture%>
   <%= f.check_box :admin%>
   <%= f.button :submit, class: 'btn-primary'%>
