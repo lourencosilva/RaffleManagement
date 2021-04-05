@@ -6,7 +6,7 @@
   <h1>Raffles</h1>
   <%= link_to new_raffle_path, class: 'btn btn-primary' do %>
     <%= icon 'fas', 'plus' %>
-    Novo Raffle
+    Create Raffle
   <% end %>
 </div>
 
@@ -46,7 +46,7 @@
             <%= link_to edit_raffle_path(raffle), class: 'btn btn-success btn-sm' do %>
               <%= icon 'fas', 'edit', class: 'fa-fw' %>
             <% end %>
-            <%= link_to raffle, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-danger btn-sm' do %>
+            <%= link_to raffle, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
               <%= icon 'fas', 'times', class: 'fa-fw' %>
             <% end %>
           </td>

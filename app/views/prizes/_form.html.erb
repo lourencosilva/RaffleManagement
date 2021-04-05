@@ -1,4 +1,3 @@
-
 <%= simple_form_for @prize do |f| %>
   <%= f.error_notification %>
 
@@ -10,6 +9,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, f.object.new_record? ? 'Criar Prize' : 'Atualizar Prize', class: 'btn btn-primary btn-lg' %>
+    <%= f.button :submit, f.object.new_record? ? 'Create Prize' : 'Update Prize', class: 'btn btn-primary btn-lg' %>
   </div>
 <% end %>

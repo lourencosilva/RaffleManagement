@@ -6,7 +6,7 @@
   <h1>Prizes</h1>
   <%= link_to new_prize_path, class: 'btn btn-primary' do %>
     <%= icon 'fas', 'plus' %>
-    Novo Prize
+    New Prize
   <% end %>
 </div>
 
@@ -36,7 +36,7 @@
             <%= link_to edit_prize_path(prize), class: 'btn btn-success btn-sm' do %>
               <%= icon 'fas', 'edit', class: 'fa-fw' %>
             <% end %>
-            <%= link_to prize, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-danger btn-sm' do %>
+            <%= link_to prize, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
               <%= icon 'fas', 'times', class: 'fa-fw' %>
             <% end %>
           </td>
