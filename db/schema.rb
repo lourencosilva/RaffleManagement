@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_234044) do
+ActiveRecord::Schema.define(version: 2021_04_05_115147) do
 
   create_table "kinds", force: :cascade do |t|
     t.string "description"
@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 2021_03_29_234044) do
   create_table "prizes", force: :cascade do |t|
     t.string "description"
     t.integer "placing"
-    t.integer "user_id", null: false
+    t.integer "raffle_id", null: false
     t.integer "ticket_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["raffle_id"], name: "index_prizes_on_raffle_id"
     t.index ["ticket_id"], name: "index_prizes_on_ticket_id"
-    t.index ["user_id"], name: "index_prizes_on_user_id"
   end
 
   create_table "raffles", force: :cascade do |t|
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2021_03_29_234044) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "number"
-    t.integer "user_id", null: false
     t.integer "raffle_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["raffle_id"], name: "index_tickets_on_raffle_id"
@@ -62,14 +62,14 @@ ActiveRecord::Schema.define(version: 2021_03_29_234044) do
     t.string "name"
     t.string "email"
     t.string "password"
-    t.text "picture"
-    t.boolean "admin"
+    t.text "photo"
+    t.boolean "root"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "prizes", "raffles"
   add_foreign_key "prizes", "tickets"
-  add_foreign_key "prizes", "users"
   add_foreign_key "raffles", "kinds"
   add_foreign_key "raffles", "users"
   add_foreign_key "tickets", "raffles"
