@@ -24,22 +24,22 @@
   <dd><%= @raffle.description %></dd>
 
   <dt>Probable draw at:</dt>
-  <dd><%= @raffle.probable_draw_at %></dd>
+  <dd><%= @raffle.probable_draw_at, format: "%d de %B de %Y" %></dd>
 
   <dt>Start sale at:</dt>
-  <dd><%= @raffle.start_sale_at %></dd>
+  <dd><%= @raffle.start_sale_at, format: "%d de %B de %Y" %></dd>
 
   <dt>Finishes sale at:</dt>
   <dd><%= @raffle.finishes_sale_at %></dd>
 
   <dt>Drawn at:</dt>
-  <dd><%= @raffle.drawn_at %></dd>
+  <dd><%= @raffle.drawn_at%></dd>
 
   <dt>Ticket value:</dt>
   <dd><%= @raffle.ticket_value %></dd>
 
   <dt>User:</dt>
-  <dd><%= @raffle.user %></dd>
+  <dd><%= @raffle.user.name %></dd>
 
   <dt>Kind:</dt>
   <dd><%= @raffle.kind %></dd>
