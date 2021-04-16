@@ -27,8 +27,8 @@
         <tr>
           <td><%= prize.description %></td>
           <td><%= prize.placing %></td>
-          <td><%= prize.raffle %></td>
-          <td><%= prize.ticket %></td>
+          <td><%= prize.raffle.title %></td>
+          <td><%= prize.ticket.number %></td>
           <td>
             <%= link_to prize, class: 'btn btn-info btn-sm' do %>
               <%= icon 'fas', 'eye', class: 'fa-fw' %>
