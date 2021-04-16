@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  get "home/index"
   resources :prizes
   resources :tickets
   resources :raffles
   resources :kinds
-  # resources :users
-
-  root to: "raffles#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root "home#index"
 end
